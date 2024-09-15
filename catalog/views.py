@@ -10,7 +10,7 @@ from catalog.models import Product, Version
 class ProductListView(ListView):
     model = Product
 
-    def get_context_data(self, *, object_list=None, **kwargs):
+    def get_context_data(self, *args, object_list=None, **kwargs):
         context_data = super().get_context_data(**kwargs)
         for product in context_data['object_list']:
             active_version = Version.objects.filter(product=product, active=True).first()

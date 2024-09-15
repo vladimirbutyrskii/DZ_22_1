@@ -49,7 +49,7 @@ class VersionForm(StyleFormMixin, ModelForm):
         fields = '__all__'
         # exclude = ("views_counter",)
 
-    def clean_active(self):
+    """def clean_active(self):
         product = self.instance  # продукт, с которым работаем
         versions = product.version_set.all()  # все версии продукта
         cleaned_data = self.cleaned_data["active"]
@@ -57,4 +57,4 @@ class VersionForm(StyleFormMixin, ModelForm):
         if versions.filter(is_active=True).exists() and cleaned_data:
             raise ValidationError('Не может быть несколько актуальных версий')
 
-        return cleaned_data
+        return cleaned_data"""
